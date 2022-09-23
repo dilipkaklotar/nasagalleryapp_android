@@ -1,4 +1,4 @@
-# nasagalleryapp_android
+# Nasa Gallery App Android
 Take Home Exercise for Obvious Company
 
 Screenshots
