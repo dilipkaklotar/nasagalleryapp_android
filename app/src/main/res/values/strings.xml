@@ -6,6 +6,12 @@
     <string name="toast_error_no_internet">No internet connection.Try again.</string>
     <string name="toast_error_something_went_wrong">No internet connection.Try again.</string>
 
+    <!-- -->
+    <string name="alert">Alert</string>
+    <string name="alert_message">Due to internet connection issue images will not download. Do you want to continue with offline data?</string>
+    <string name="yes">yes</string>
+    <string name="no">no</string>
+
 
     <!-- Dashboard -->
     <string name="dashboard_title">Welcome to</string>

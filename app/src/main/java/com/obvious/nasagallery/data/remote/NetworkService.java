@@ -1,7 +1,6 @@
 package com.obvious.nasagallery.data.remote;
 
 import com.obvious.nasagallery.data.remote.response.ApiResModel;
-import com.obvious.nasagallery.data.remote.response.Endpoints;
 
 import java.util.HashMap;
 

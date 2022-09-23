@@ -4,8 +4,8 @@ import android.content.Context;
 
 import androidx.lifecycle.MutableLiveData;
 
+import com.obvious.nasagallery.data.remote.Endpoints;
 import com.obvious.nasagallery.data.remote.response.ApiResModel;
-import com.obvious.nasagallery.data.remote.response.Endpoints;
 import com.obvious.nasagallery.util.MCrypt;
 import com.obvious.nasagallery.util.NasaGalleryConstants;
 

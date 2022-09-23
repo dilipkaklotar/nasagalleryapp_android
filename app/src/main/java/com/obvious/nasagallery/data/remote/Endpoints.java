@@ -1,4 +1,6 @@
-package com.obvious.nasagallery.data.remote.response;
+package com.obvious.nasagallery.data.remote;
+
+// Declare all api end points in this interface.
 
 public interface Endpoints {
 

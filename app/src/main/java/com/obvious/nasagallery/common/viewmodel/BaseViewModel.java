@@ -12,6 +12,10 @@ import com.obvious.nasagallery.NasaGalleryApp;
 import com.obvious.nasagallery.util.ConnectivityReceiver;
 
 
+
+// BaseViewModel helps to write common functions such as
+// Internet connection check, etc
+
 public class BaseViewModel extends AndroidViewModel {
     private boolean isNetAvailable = false;
     protected FragmentManager fragmentManager;

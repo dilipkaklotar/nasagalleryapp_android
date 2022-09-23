@@ -1,6 +1,7 @@
 package com.obvious.nasagallery.ui.dashboard;
 
 import android.app.Application;
+import android.app.Dialog;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
@@ -9,6 +10,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.obvious.nasagallery.R;
 import com.obvious.nasagallery.adapter.DashboardAdapter;
+import com.obvious.nasagallery.common.clickhandler.MethodCallListener;
 import com.obvious.nasagallery.common.viewmodel.AppViewModel;
 import com.obvious.nasagallery.data.model.NasaData;
 import com.obvious.nasagallery.databinding.FragmentDashboardBinding;
@@ -37,6 +39,8 @@ public class DashboardFragmentViewModel extends AppViewModel implements NasaGall
     StaggeredGridLayoutManager manager;
     DashboardAdapter dashboardAdapter;
 
+    MethodCallListener methodCallListener;
+
     public DashboardFragmentViewModel(Application application, FragmentDashboardBinding binder, String currentTab, BaseFragment.FragmentInteractionCallback interactionCallback) {
         super(application, ((AppCompatActivity) Utility.getViewActivity(binder)).getSupportFragmentManager());
         this.binder = binder;
@@ -48,7 +52,21 @@ public class DashboardFragmentViewModel extends AppViewModel implements NasaGall
 
     private void initiate() {
 
-        doGetAllFeed(true, mCurrentTab, mCallback);
+        methodCallListener = new MethodCallListener() {
+            @Override
+            public void callMethod() {
+                doGetAllFeed(true, mCurrentTab, mCallback);
+            }
+        };
+
+        if (isNetConnected()) {
+            doGetAllFeed(true, mCurrentTab, mCallback);
+        } else {
+            DialogManager.showDialogWithListener(binder.getRoot().getContext(),
+                    binder.getRoot().getContext().getString(R.string.alert),
+                    binder.getRoot().getContext().getString(R.string.alert_message),
+                    methodCallListener);
+        }
 
         binder.executePendingBindings();
     }

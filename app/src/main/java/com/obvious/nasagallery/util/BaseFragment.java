@@ -48,7 +48,7 @@ public class BaseFragment extends Fragment implements ConnectivityReceiver.Conne
         if (isNetAvailable) {
             return true;
         }
-        ToastManager.toast(getContext(), getContext().getString(R.string.toast_error_no_internet));
+        //ToastManager.toast(getContext(), getContext().getString(R.string.toast_error_no_internet));
         return false;
     }
 

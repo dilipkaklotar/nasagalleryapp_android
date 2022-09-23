@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 import androidx.databinding.DataBindingUtil;
 
 import com.obvious.nasagallery.R;
@@ -58,6 +59,16 @@ public class DetailFragment extends BaseFragment implements NasaGalleryConstants
         detailFragmentViewModel = new DetailFragmentViewModel(((MainActivity) mContext).getApplication(), binding, currentTab, fragmentInteractionCallback, currentIndex);
 
         binding.btnBack.setOnClickListener(v -> ((MainActivity) binding.getRoot().getContext()).onBackPressed());
+
+        if(isNetConnected()){
+            binding.btnBack.setColorFilter(ContextCompat.getColor(binding.getRoot().getContext(), R.color.white), android.graphics.PorterDuff.Mode.MULTIPLY);
+            binding.btnDetail.setColorFilter(ContextCompat.getColor(binding.getRoot().getContext(), R.color.white), android.graphics.PorterDuff.Mode.MULTIPLY);
+            binding.btnZoom.setColorFilter(ContextCompat.getColor(binding.getRoot().getContext(), R.color.white), android.graphics.PorterDuff.Mode.MULTIPLY);
+        } else {
+            binding.btnBack.setColorFilter(ContextCompat.getColor(binding.getRoot().getContext(), R.color.black), android.graphics.PorterDuff.Mode.MULTIPLY);
+            binding.btnDetail.setColorFilter(ContextCompat.getColor(binding.getRoot().getContext(), R.color.black), android.graphics.PorterDuff.Mode.MULTIPLY);
+            binding.btnZoom.setColorFilter(ContextCompat.getColor(binding.getRoot().getContext(), R.color.black), android.graphics.PorterDuff.Mode.MULTIPLY);
+        }
 
         return binding.getRoot();
 

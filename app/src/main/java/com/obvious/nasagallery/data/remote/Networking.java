@@ -3,8 +3,6 @@ package com.obvious.nasagallery.data.remote;
 
 import android.content.Context;
 
-import androidx.annotation.NonNull;
-
 import com.obvious.nasagallery.utils.Urls;
 import com.obvious.nasagallery.util.Constants;
 
@@ -16,7 +14,6 @@ import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 
 import javax.net.ssl.HostnameVerifier;
-import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLSession;
 import javax.net.ssl.SSLSocketFactory;
@@ -38,12 +35,13 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Networking {
 
-    private Context mContext;
+    Context mContext;
 
     public Networking(Context context) {
         this.mContext = context;
     }
 
+    // Created Retrofit Builder in Networking Class
     private Retrofit.Builder getRetrofitBuilder() {
         return new Retrofit.Builder()
                 .baseUrl(Urls.getBaseUrl())
@@ -125,53 +123,4 @@ public class Networking {
         return httpClient.build();
     }
 
-    public class UserAgentInterceptor implements Interceptor {
-        private final String mUserAgent;
-
-        public UserAgentInterceptor(String userAgent) {
-            mUserAgent = userAgent;
-        }
-
-        @Override
-        public Response intercept(@NonNull Chain chain) throws IOException {
-            Request request = chain.request()
-                    .newBuilder()
-                    .header("User-Agent", mUserAgent)
-                    .build();
-            return chain.proceed(request);
-        }
-    }
-
-    public static SSLContext trustEveryone() {
-
-        SSLContext context = null;
-        try {
-            HttpsURLConnection.setDefaultHostnameVerifier(new HostnameVerifier() {
-                public boolean verify(String hostname, SSLSession session) {
-                    return true;
-                }
-            });
-            context = SSLContext.getInstance("TLSv1.2"); //TLSv1.2
-            context.init(null, new X509TrustManager[]{new X509TrustManager() {
-                public void checkClientTrusted(X509Certificate[] chain,
-                                               String authType) throws CertificateException {
-                }
-
-                public void checkServerTrusted(X509Certificate[] chain,
-                                               String authType) throws CertificateException {
-                }
-
-                public X509Certificate[] getAcceptedIssuers() {
-                    return new X509Certificate[0];
-                }
-            }}, new SecureRandom());
-            HttpsURLConnection.setDefaultSSLSocketFactory(
-                    context.getSocketFactory());
-        } catch (Exception e) { // should never happen
-            e.printStackTrace();
-        }
-
-
-        return context;
-    }
 }

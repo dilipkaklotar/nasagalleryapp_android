@@ -31,9 +31,7 @@ public class DashboardAdapter extends RecyclerView.Adapter<DashboardAdapter.View
 
     List<NasaData> nasaDataList;
 
-    public DashboardAdapter(Context context,
-                            List<NasaData> nasaDataList,
-                            String currentTab,
+    public DashboardAdapter(Context context, List<NasaData> nasaDataList, String currentTab,
                             BaseFragment.FragmentInteractionCallback interactionCallback) {
         this.mContext = context;
         this.nasaDataList = nasaDataList;
@@ -44,17 +42,17 @@ public class DashboardAdapter extends RecyclerView.Adapter<DashboardAdapter.View
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(mContext).inflate(R.layout.adapter_dashboard_item, viewGroup, false);
-//        GridLayoutManager.LayoutParams params = (GridLayoutManager.LayoutParams) view.getLayoutParams();
-//        params.height = 350;
-//        view.setLayoutParams(params);
         return new ViewHolder(view);
     }
 
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int pos) {
+
+        // Here setIsRecyclable property to false to prevent auto swap list item.
         holder.setIsRecyclable(false);
 
+        // Create NasaData model from list of nasaDataList
         NasaData data = nasaDataList.get(holder.getAdapterPosition());
 
         // Check Internet connection if net available then load images from internet
@@ -78,15 +76,13 @@ public class DashboardAdapter extends RecyclerView.Adapter<DashboardAdapter.View
             holder.imageView.setImageResource(R.drawable.image_placeholder);
         }
 
-        holder.imageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        // Image Click listener
+        holder.imageView.setOnClickListener(view -> {
 
-                // Redirect to detail page with index parameter
-                FragmentUtils.sendActionToDetail(ACTION_DETAIL,
-                        mCurrentTab, holder.getAdapterPosition(),true, mCallback);
+            // Redirect to detail page with index parameter
+            FragmentUtils.sendActionToDetail(ACTION_DETAIL,
+                    mCurrentTab, holder.getAdapterPosition(), true, mCallback);
 
-            }
         });
 
     }

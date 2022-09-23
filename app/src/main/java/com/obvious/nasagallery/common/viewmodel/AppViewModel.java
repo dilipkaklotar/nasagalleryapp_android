@@ -9,7 +9,7 @@ import com.obvious.nasagallery.databinding.CustomLoaderBinding;
 
 public class AppViewModel extends APIViewModel {
 
-    private static final String TAG = AppViewModel.class.getName();
+    String TAG = AppViewModel.class.getName();
 
     public AppViewModel(@NonNull Application application) {
         super(application);
@@ -23,10 +23,12 @@ public class AppViewModel extends APIViewModel {
         return this;
     }
 
+    // Show Loader in middle of the screen
     public void showLoader(CustomLoaderBinding loaderBinding) {
         loaderBinding.setIsLoading(true);
     }
 
+    // Hide Loader in middle of the screen
     public void hideLoader(CustomLoaderBinding loaderBinding) {
         loaderBinding.setIsLoading(false);
     }

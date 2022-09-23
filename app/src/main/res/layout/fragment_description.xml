@@ -66,7 +66,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/title"
-                    android:textColor="@color/white" />
+                    android:textColor="@color/white"
+                    android:visibility="@{model.title == null ? View.GONE : View.VISIBLE}" />
 
                 <TextView
                     android:id="@+id/text_title"
@@ -74,7 +75,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@{model.title}"
-                    android:textColor="@color/white" />
+                    android:textColor="@color/white"
+                    android:visibility="@{model.title == null ? View.GONE : View.VISIBLE}" />
 
 
                 <TextView
@@ -83,7 +85,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:text="@string/date_of_capture"
-                    android:textColor="@color/white" />
+                    android:textColor="@color/white"
+                    android:visibility="@{model.my_date == null ? View.GONE : View.VISIBLE}" />
 
                 <TextView
                     android:id="@+id/text_date"
@@ -91,7 +94,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@{model.my_date}"
-                    android:textColor="@color/white" />
+                    android:textColor="@color/white"
+                    android:visibility="@{model.my_date == null ? View.GONE : View.VISIBLE}" />
 
 
                 <TextView
@@ -100,7 +104,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:text="@string/copyright"
-                    android:textColor="@color/white" />
+                    android:textColor="@color/white"
+                    android:visibility="@{model.copyright == null ? View.GONE : View.VISIBLE}" />
 
                 <TextView
                     android:id="@+id/text_copyright"
@@ -108,7 +113,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@{model.copyright}"
-                    android:textColor="@color/white" />
+                    android:textColor="@color/white"
+                    android:visibility="@{model.copyright == null ? View.GONE : View.VISIBLE}" />
 
                 <TextView
                     style="@style/LabelStyle"
@@ -116,7 +122,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:text="@string/explanation"
-                    android:textColor="@color/white" />
+                    android:textColor="@color/white"
+                    android:visibility="@{model.explanation ? View.GONE : View.VISIBLE}" />
 
                 <TextView
                     android:id="@+id/text_description"
@@ -124,7 +131,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@{model.explanation}"
-                    android:textColor="@color/white" />
+                    android:textColor="@color/white"
+                    android:visibility="@{model.explanation ? View.GONE : View.VISIBLE}" />
 
 
             </androidx.appcompat.widget.LinearLayoutCompat>

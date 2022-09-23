@@ -33,18 +33,17 @@ public class DetailAdapter extends RecyclerView.Adapter<DetailAdapter.DetailView
 
     List<NasaData> nasaDataList = null;
 
-    public DetailAdapter(Context context, String currentTab,
-                                    BaseFragment.FragmentInteractionCallback interactionCallback) {
+    public DetailAdapter(Context context, String currentTab, BaseFragment.FragmentInteractionCallback interactionCallback) {
         this.mContext = context;
         this.mCurrentTab = currentTab;
         this.mCallback = interactionCallback;
 
     }
 
-    public void setData( List<NasaData> nasaDataList){
+    public void setData(List<NasaData> nasaDataList) {
+        // Ths method will set data to adapter
         this.nasaDataList = nasaDataList;
     }
-
 
 
     @Override
@@ -57,8 +56,10 @@ public class DetailAdapter extends RecyclerView.Adapter<DetailAdapter.DetailView
     @Override
     public void onBindViewHolder(DetailViewHolder holder, @SuppressLint("RecyclerView") int position) {
 
+        // Create NasaData model from list of nasaDataList
         NasaData nasaData = nasaDataList.get(holder.getAdapterPosition());
 
+        // Set Both Header and Description text value
         holder.tvHeader.setText(nasaData.getTitle());
         holder.tvDescription.setText(nasaData.getExplanation());
 
@@ -100,9 +101,6 @@ public class DetailAdapter extends RecyclerView.Adapter<DetailAdapter.DetailView
             mImageView = itemView.findViewById(R.id.imageView);
             tvHeader = itemView.findViewById(R.id.text_header);
             tvDescription = itemView.findViewById(R.id.text_body);
-
         }
-
     }
-
 }
