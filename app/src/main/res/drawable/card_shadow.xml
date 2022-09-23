@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape>
+            <padding
+                android:bottom="@dimen/card_shadow"
+                android:left="@dimen/card_shadow"
+                android:right="@dimen/card_shadow"
+                android:top="@dimen/card_shadow" />
+
+            <solid android:color="#03435791" />
+            <corners
+                android:topLeftRadius="@dimen/card_corner_radius"
+                android:topRightRadius="@dimen/card_corner_radius"
+                android:bottomLeftRadius="@dimen/card_corner_radius"
+                android:bottomRightRadius="@dimen/card_corner_radius"/>
+        </shape>
+    </item>
+    <item>
+        <shape>
+            <padding
+                android:bottom="@dimen/card_shadow"
+                android:left="@dimen/card_shadow"
+                android:right="@dimen/card_shadow"
+                android:top="@dimen/card_shadow" />
+
+            <solid android:color="#03435791" />
+            <corners
+                android:topLeftRadius="@dimen/card_corner_radius"
+                android:topRightRadius="@dimen/card_corner_radius"
+                android:bottomLeftRadius="@dimen/card_corner_radius"
+                android:bottomRightRadius="@dimen/card_corner_radius" />
+        </shape>
+    </item>
+    <item>
+        <shape>
+            <padding
+                android:bottom="@dimen/card_shadow"
+                android:left="@dimen/card_shadow"
+                android:right="@dimen/card_shadow"
+                android:top="@dimen/card_shadow" />
+
+            <solid android:color="#03435791" />
+            <corners
+                android:topLeftRadius="@dimen/card_corner_radius"
+                android:topRightRadius="@dimen/card_corner_radius"
+                android:bottomLeftRadius="@dimen/card_corner_radius"
+                android:bottomRightRadius="@dimen/card_corner_radius"/>
+        </shape>
+    </item>
+    <item>
+        <shape>
+            <padding
+                android:bottom="@dimen/card_shadow"
+                android:left="@dimen/card_shadow"
+                android:right="@dimen/card_shadow"
+                android:top="@dimen/card_shadow" />
+
+            <solid android:color="#03435791" />
+            <corners
+                android:topLeftRadius="@dimen/card_corner_radius"
+                android:topRightRadius="@dimen/card_corner_radius"
+                android:bottomLeftRadius="@dimen/card_corner_radius"
+                android:bottomRightRadius="@dimen/card_corner_radius" />
+        </shape>
+    </item>
+
+    <item>
+        <shape>
+            <padding
+                android:bottom="@dimen/card_shadow"
+                android:left="@dimen/card_shadow"
+                android:right="@dimen/card_shadow"
+                android:top="@dimen/card_shadow" />
+
+            <solid android:color="@color/white" />
+            <corners
+                android:topLeftRadius="@dimen/card_corner_radius"
+                android:topRightRadius="@dimen/card_corner_radius"
+                android:bottomLeftRadius="@dimen/card_corner_radius"
+                android:bottomRightRadius="@dimen/card_corner_radius" />
+        </shape>
+    </item>
+</layer-list>

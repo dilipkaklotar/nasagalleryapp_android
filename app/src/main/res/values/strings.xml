@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Nasa Gallery</string>
+
+    <!-- Network Connection Error -->
+    <string name="network_connection">Network Connection</string>
+    <string name="toast_error_no_internet">No internet connection.Try again.</string>
+    <string name="toast_error_something_went_wrong">No internet connection.Try again.</string>
+
+
+    <!-- Dashboard -->
+    <string name="dashboard_title">Welcome to</string>
+    <string name="dashboard_secondary_title">@string/app_name</string>
+    <string name="recent">Recent</string>
+
+    <!-- -->
+    <string name="ok">OK</string>
+    <string name="press_one_more_to_exit_app">Press back one more time to exit from app</string>
+    <string name="title">Title</string>
+    <string name="date_of_capture">Date of Capture</string>
+    <string name="copyright">Copyright</string>
+    <string name="explanation">Explanation</string>
+</resources>
